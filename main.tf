@@ -19,7 +19,7 @@ resource "aws_route53_zone" "default" {
 
 resource "aws_route53_record" "ns" {
   count   = "${var.enabled == "true" ? 1 : 0}"
-  zone_id = "${aws_route53_zone.default.*.id}"
+  zone_id = "${join("", aws_route53_zone.default.*.id)}"
   name    = "${var.zone_name}"
   type    = "NS"
   ttl     = "60"
