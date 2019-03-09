@@ -6,6 +6,10 @@ variable "stage" {
   description = "Stage (e.g. `prod`, `dev`, `staging`)"
 }
 
+variable "name" {
+  description = "name"
+}
+
 variable "zone_name" {
   description = "Zone name"
 }
