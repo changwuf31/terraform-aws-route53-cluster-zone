@@ -1,7 +1,3 @@
-variable "name" {
-  description = "The Name of the application or solution  (e.g. `bastion` or `portal`)"
-}
-
 variable "namespace" {
   description = "Namespace (e.g. `eg` or `cp`)"
 }
@@ -11,18 +7,7 @@ variable "stage" {
 }
 
 variable "zone_name" {
-  default     = "$${name}.$${stage}.$${parent_zone_name}"
   description = "Zone name"
-}
-
-variable "parent_zone_id" {
-  default     = ""
-  description = "ID of the hosted zone to contain this record  (or specify `parent_zone_name`)"
-}
-
-variable "parent_zone_name" {
-  default     = ""
-  description = "Name of the hosted zone to contain this record (or specify `parent_zone_id`)"
 }
 
 variable "delimiter" {
