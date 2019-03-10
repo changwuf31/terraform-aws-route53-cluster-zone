@@ -12,9 +12,10 @@ module "label" {
 data "aws_region" "default" {}
 
 resource "aws_route53_zone" "default" {
-  count = "${var.enabled == "true" ? 1 : 0}"
-  name  = "${var.zone_name}"
-  tags  = "${module.label.tags}"
+  count  = "${var.enabled == "true" ? 1 : 0}"
+  name   = "${var.zone_name}"
+  vpc_id = "${var.vpc_id}"
+  tags   = "${module.label.tags}"
 }
 
 resource "aws_route53_record" "ns" {
