@@ -14,7 +14,7 @@ data "aws_region" "default" {}
 resource "aws_route53_zone" "default" {
   count  = "${var.enabled == "true" ? 1 : 0}"
   name   = "${var.zone_name}"
-  vpc_id = "${var.vpc_id}"
+  vpc    = "${var.vpc_id}"
   tags   = "${module.label.tags}"
 }
 
