@@ -4,7 +4,7 @@ output "zone_id" {
 }
 
 output "zone_name_servers" {
-  value       = "${aws_route53_zone.default.name_servers}"
+  value       = "${aws_route53_zone.default.*.name_servers}"
 }
 
 output "zone_name" {
